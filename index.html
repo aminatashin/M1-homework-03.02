@@ -1,0 +1,113 @@
+//Create programmatically (using JS) a bingo board with 76 cells, numbered from 1 to 76.
+
+//Create a button to randomize a number from 1 to 76. The cell with same number should be highlighted in some way on the bingo board.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+    <style>
+        body{
+            background-color: black;
+    color: white;
+    max-width: 1268px;
+    margin: 0 auto;
+        }
+        .titile{
+            width: 1000px;
+        }
+        h1{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    color: #00db71;
+    text-transform: uppercase;
+    font-weight: bold;
+        }
+        #container {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #4a4a4a;
+    padding: 12px;
+    border-radius: 8px;
+   
+    width: 60%;
+}
+      
+        .numerStyle {
+    background-color: rgb(170, 47, 47);
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 97px;
+    font-size: large;
+    border-color: rgb(207, 199, 199);
+    border-style: solid;
+    border-width: 2px;
+    margin: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+        
+
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+
+    <button id="button" onclick="bingo()">click it!</button>
+
+    <h1 class="title">Bingo Board</h1>
+    <div id="container" >
+
+    </div>
+    
+
+
+    <script type="text/javascript">
+
+        let creatBingo = function(){
+
+        let number = 76
+        let divId = document.getElementById('container')
+        
+        for ( let currentDiv = 1 ; currentDiv <= number ; currentDiv++){
+            // we can add an id to the new div
+            let newD = document.createElement('div')
+            newD.id = currentDiv
+            newD.innerText = currentDiv
+            newD.classList.add("numerStyle")
+            divId.appendChild(newD)
+
+             divId.appendChild(newD)
+        
+
+        }
+        
+    }
+    creatBingo()
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+}
+
+    const bingo = function(){
+        let randomNumber = getRandomInt("76")// 5
+        let randomNumberToString = randomNumber.toString()// "5"
+       
+        let color = document.getElementById(randomNumberToString)// <div id="5"></div>
+        color.style.color = 'yellow' //<div id="5"></div> to yellow
+        
+
+
+    }
+    
+         
+
+    </script>
+</body>
+</html>

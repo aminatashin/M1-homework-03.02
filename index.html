@@ -95,12 +95,22 @@
       return Math.floor(Math.random() * max);
 }
 
+   let selectedNumber = []
     const bingo = function(){
         let randomNumber = getRandomInt("76")// 5
         let randomNumberToString = randomNumber.toString()// "5"
-       
-        let color = document.getElementById(randomNumberToString)// <div id="5"></div>
+        if(selectedNumber.includes(randomNumber)){
+            console.log("repeated number")
+
+         }else{ 
+             selectedNumber.push(randomNumber)
+             let color = document.getElementById(randomNumberToString)// <div id="5"></div>
         color.style.color = 'yellow' //<div id="5"></div> to yellow
+        
+        //let random = Math.floor(Math.random()*76)
+        //let randomElement = documemnt.getelementbyId('random')
+        //randomElemet.style.color = ''yellow'
+         }
         
 
 
